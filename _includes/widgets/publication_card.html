@@ -1,0 +1,12 @@
+{% assign publications = include.publications %}
+<div class="my-3 p-0 bg-white shadow-sm rounded-xl">
+    <h6 class="border-bottom border-gray p-3 mb-0 d-flex align-items-baseline">
+        <span>{% if include.title %}{{ include.title }}{% else %}<i class="fas fa-book"></i> Publications{% endif %}</span>
+        <span class="ml-auto small text-muted font-weight-normal">
+            <sup>*</sup><i>first author</i>&nbsp;&nbsp;<sup><i class="fas fa-envelope" style="font-size:0.7em;"></i></sup> <i>corresponding author</i>
+        </span>
+    </h6>
+    {% for item in publications limit:include.limit %}
+        {% include widgets/publication_item.html item=item first=false last=false hide_bottom_border=forloop.last %}
+    {% endfor %}
+</div>

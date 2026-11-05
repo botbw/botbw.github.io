@@ -1,0 +1,6 @@
+homepage:
+  show_experience: true
+  show_selected_publications: true
+
+footer_text: >-
+  Style credit: <a href="https://github.com/luost26/academic-homepage" target="_blank">academic-homepage</a>

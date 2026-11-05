@@ -1,0 +1,27 @@
+{% if site.data.projects %}
+<div class="my-3 p-0 bg-white shadow-sm rounded-xl">
+    <h6 class="border-bottom border-gray p-3 mb-0">
+        <i class="fas fa-code-branch"></i> Selected Projects
+    </h6>
+    <ul class="list-unstyled px-3 pt-3 pb-1 mb-0">
+        {% for item in site.data.projects %}
+        <li class="media mb-3">
+            {% if item.logo %}<img src="{{ item.logo }}" alt="{{ item.name }} logo" class="mr-3 mt-1 rounded" style="width: 36px; height: 36px; object-fit: contain;">{% endif %}
+            <div class="media-body">
+                <div class="d-flex align-items-center">
+                    <a target="_blank" href="{{ item.url }}"><strong>{{ item.name }}</strong></a>
+                    {% if item.role %}<span class="badge badge-pill badge-light border ml-2 font-weight-normal">{{ item.role }}</span>{% endif %}
+                    {% if item.repo %}<a target="_blank" href="https://github.com/{{ item.repo }}/stargazers" class="ml-2"><img src="https://img.shields.io/github/stars/{{ item.repo }}?style=social" alt="GitHub stars" style="height: 18px;"></a>{% endif %}
+                </div>
+                <div class="small text-muted">{{ item.description }}</div>
+                {% if item.highlights %}
+                <ul class="small pl-3 mb-0 mt-1">
+                    {% for h in item.highlights %}<li>{{ h }}</li>{% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

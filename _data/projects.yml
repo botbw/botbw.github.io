@@ -1,0 +1,79 @@
+- name: HieraSparse
+  role: Author
+  repo: psl-ntu/HieraSparse
+  logo: https://github.com/psl-ntu.png?size=64
+  url: https://github.com/psl-ntu/HieraSparse
+  description: >-
+    Hierarchical KV-cache compression with semi-structured sparse attention for long-context LLMs.
+    SC '26, with all three ACM reproducibility badges.
+  highlights:
+  - Designed a hierarchical KV-cache compression scheme with flexible quality–sparsity trade-offs, and wrote the prefill and decode attention kernels that run it on Sparse Tensor Cores
+  - 4.57× attention speedup and 1.2× higher KV compression than state-of-the-art unstructured sparsity at the same sparsity level; up to 1.85× attention speedup in prefill
+  - With simple magnitude-based pruning, 1.34× prefill and 1.71× decode attention speedup with minimal quality loss
+
+- name: EasyDist
+  role: Core contributor
+  repo: alibaba/easydist
+  logo: https://github.com/alibaba.png?size=64
+  url: https://github.com/alibaba/easydist
+  description: >-
+    A graph compiler for automatically parallelizing PyTorch model training across multiple GPUs.
+  highlights:
+  - Hacked <code>torch.dynamo</code> and dispatcher to capture the computation graph of DL models and optimizers, inserting collective communication via graph transformation and generating distributed code
+  - Designed and implemented a sharding solver that explores distributed tensor placements (sharded, replicated, partial) over an n-dimensional GPU mesh and finds the optimal assignment via ILP (OR-Tools)
+  - Designed and implemented pipeline parallelism composable with SPMD parallelism, supporting GPipe, 1F1B, and asynchronous 1F1B schedules
+
+- name: Colossal-AI
+  role: Core contributor
+  repo: hpcaitech/ColossalAI
+  logo: https://github.com/hpcaitech.png?size=64
+  url: https://github.com/hpcaitech/ColossalAI
+  description: >-
+    A PyTorch-based system for training and serving large models across many GPUs.
+  highlights:
+  - Optimized the ZeRO optimizer by prefetching parameter/gradient chunks and overlapping collective and PCIe communication (when offloading) with forward/backward computation and optimizer updates
+  - Designed and implemented MoE expert parallelism with intra- and inter-node all-to-all, integrated with data parallelism, tensor parallelism, and the distributed ZeRO optimizer
+  - Supported FP8 quantization-aware training for both collective communication (all-to-all and all-gather of quantized tensors and their scales) and computation (custom kernels and cuBLAS integration)
+
+- name: TensorNVMe
+  role: Core contributor
+  repo: hpcaitech/TensorNVMe
+  logo: https://github.com/hpcaitech.png?size=64
+  url: https://github.com/hpcaitech/TensorNVMe
+  description: >-
+    A Python library that transfers PyTorch tensors between GPU, CPU, and NVMe.
+  highlights:
+  - Designed and implemented a custom thread-pool backend for asynchronous GPU/CPU/disk tensor transfer, outperforming the <code>io_uring</code> and <code>aio</code> backends through lower overhead and support for D2H copies
+  - Added safetensors support with a custom C++ writer (ported from the original Rust implementation), avoiding arbitrary code execution and staying compatible with most training and inference frameworks
+
+- name: Open-Sora
+  role: Contributor
+  repo: hpcaitech/Open-Sora
+  logo: https://raw.githubusercontent.com/hpcaitech/Open-Sora-Demo/main/readme/icon.png
+  url: https://github.com/hpcaitech/Open-Sora
+  description: >-
+    An open-source video-generation model with its training and inference stack. Contributions were made in a private mirror of the repository.
+  highlights:
+  - Integrated asynchronous checkpointing via TensorNVMe into training, fully overlapping checkpoint-saving latency (both D2H copy and disk write) with computation
+  - Optimized model inference by adapting sparse attention (Sliding-Tile-Attention), timestep embedding caching (TeaCache), and quantization (SageAttention, SVDQuant) to Open-Sora
+
+- name: TileLang
+  role: Community contributor
+  repo: tile-ai/tilelang
+  logo: https://github.com/tile-ai.png?size=64
+  url: https://github.com/tile-ai/tilelang
+  description: >-
+    A DSL designed to streamline the development of high-performance GPU/CPU/accelerator kernels.
+  highlights:
+  - Implemented <code>T.gemm_sp</code>, a 2:4 semi-structured GEMM tile operator generated from CuTe/CUTLASS templates, achieving 1.5–2× speedup over dense GEMM on NVIDIA A100, A40, L40S, H20, and H200
+  - Later extended this contribution into HieraSparse (SC '26), as the sole student author
+
+- name: LeetCUDA
+  role: Community contributor
+  repo: xlite-dev/LeetCUDA
+  logo: https://github.com/xlite-dev.png?size=64
+  url: https://github.com/xlite-dev/LeetCUDA
+  description: >-
+    A collection of CUDA learning notes and optimized kernels.
+  highlights:
+  - Contributed CuTe implementation examples, including matrix transpose, GEMM, and FlashAttention

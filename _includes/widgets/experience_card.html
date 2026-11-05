@@ -1,0 +1,49 @@
+{% assign section_list = include.sections | default: "education,academic_experience,industry_experience" %}
+{% assign sections = section_list | split: "," %}
+{% for key in sections %}
+{% assign entries = site.data.profile[key] %}
+{% if entries %}
+<div class="my-3 p-0 bg-white shadow-sm rounded-xl">
+    <h6 class="border-bottom border-gray p-3 mb-0">
+        {% if key == "education" %}<i class="fas fa-graduation-cap"></i> Education
+        {% elsif key == "academic_experience" %}<i class="fas fa-flask"></i> Research Experience
+        {% else %}<i class="fas fa-briefcase"></i> Industry Experience{% endif %}
+    </h6>
+    <ul class="list-unstyled px-3 pt-3 pb-2 mb-0">
+        {% for item in entries %}
+        <li class="media mb-2">
+            {% if item.logo %}<img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 18px;" class="mr-2 mt-1">{% endif %}
+            <div class="media-body">
+                {% if item.roles %}
+                <div>{{ item.name }}</div>
+                {% for role in item.roles %}
+                <div class="d-flex small">
+                    <div>{{ role.position }}</div>
+                    <div class="ml-auto no-break text-muted"><em>{{ role.date }}</em></div>
+                </div>
+                {% endfor %}
+                {% if item.highlights %}
+                <ul class="small text-muted pl-3 mb-1">
+                    {% for h in item.highlights %}<li>{{ h }}</li>{% endfor %}
+                </ul>
+                {% endif %}
+                {% else %}
+                <div class="d-flex">
+                    <div>{{ item.name }}</div>
+                    <div class="ml-auto no-break small text-muted"><em>{{ item.date }}</em></div>
+                </div>
+                {% if item.dept %}<div class="small text-muted">{{ item.dept }}</div>{% endif %}
+                <div class="small">{{ item.position }}</div>
+                {% if item.highlights %}
+                <ul class="small text-muted pl-3 mb-1">
+                    {% for h in item.highlights %}<li>{{ h }}</li>{% endfor %}
+                </ul>
+                {% endif %}
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,43 @@
+{% assign item = include.item %}
+{% capture pub_body %}
+            <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
+            <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
+            <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
+            <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
+
+            <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+                {% for link in item.links %}
+                {% if link[1].url %}
+                <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
+                {% else %}
+                <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
+                {% endif %}
+                {% endfor %}
+            </p>
+{% endcapture %}
+
+<div class="{% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray">
+    <!-- Desktop: venue column on the left -->
+    <div class="d-none d-md-flex p-3">
+        {% if item.venue_logo or item.venue %}
+        <div class="text-center mr-3 flex-shrink-0" style="width: 72px;">
+            {% if item.venue_logo %}<img src="{{ item.venue_logo | relative_url }}" alt="{{ item.venue }}" style="width: 40px; height: 40px; object-fit: contain;">{% endif %}
+            {% if item.venue %}<div class="mt-1"><span class="badge badge-pill badge-light border font-weight-bold">{{ item.venue }}</span></div>{% endif %}
+        </div>
+        {% endif %}
+        <div class="flex-grow-1">
+            {{ pub_body }}
+        </div>
+    </div>
+
+    <!-- Mobile: venue shown above the title -->
+    <div class="d-md-none py-3 px-4">
+        {% if item.venue_logo or item.venue %}
+        <div class="mb-1 d-flex align-items-center">
+            {% if item.venue_logo %}<img src="{{ item.venue_logo | relative_url }}" alt="{{ item.venue }}" class="mr-2" style="width: 24px; height: 24px; object-fit: contain;">{% endif %}
+            {% if item.venue %}<span class="badge badge-pill badge-light border font-weight-bold">{{ item.venue }}</span>{% endif %}
+        </div>
+        {% endif %}
+        {{ pub_body }}
+    </div>
+</div>

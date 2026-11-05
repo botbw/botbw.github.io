@@ -1,0 +1,94 @@
+primary_name: "Haoxuan Wang"
+secondary_name: ""
+navbar_name: "Haoxuan Wang"
+
+positions:
+- name: Nanyang Technological University
+
+
+email: "wang1570@e.ntu.edu.sg"
+# gscholar: your_scholar_id
+github: botbw
+# twitter: your_twitter_id  # Do not include the '@' symbol
+# linkedin: your-linked-in-id
+orcid: 0009-0000-2654-2033
+
+short_bio_text_justify: false
+short_bio: >-
+  <p>
+    I am a research assistant in the <a href="https://psl-ntu.github.io/" target="_blank">Parallel Systems Lab</a>
+    at Nanyang Technological University (NTU), Singapore, advised by
+    <a href="https://wangchen.io/" target="_blank">Prof. Chen Wang</a>. Currently, I work on accelerating attention
+    through sparsity and KV-cache compression, and on resource management and allocation for agentic systems.
+    More broadly, I am interested in <strong>machine learning systems</strong> and <strong>efficient machine learning</strong>:
+    building systems for emerging workloads such as diffusion models and agentic workflows, and designing algorithms
+    like mixture-of-experts that run efficiently on real hardware.
+  </p>
+  <p>
+    Before that, during my undergraduate studies, I was fortunate to assist in
+    <a href="https://www.comp.nus.edu.sg/~youy/" target="_blank">Prof. Yang You</a>'s HPC-AI Lab at the National
+    University of Singapore. Working with <a href="https://shenggan.github.io/" target="_blank">Dr. Shenggan Cheng</a> at the lab and <a href="https://orcid.org/0009-0000-6193-6126" target="_blank">Dr. Lansong Diao</a> from Alibaba Cloud PAI Research, I first learned about machine learning
+    systems, distributed training, and machine learning compilers. I then joined Prof. You's startup, first as an
+    intern and later as an engineer, where I worked with <a href="https://github.com/ver217" target="_blank">Mr. Hongxin Liu</a>
+    and <a href="https://scholar.google.com/citations?user=c-ks50cAAAAJ" target="_blank">Dr. Hang Xu</a> and gained hands-on experience across the AI infrastructure stack, from GPU performance and distributed training to storage and cluster management. Along the way,
+    I have also learned a great deal from excellent community projects.
+  </p>
+
+portrait_url: /assets/images/photos/haoxuan.jpg
+
+education:
+- name: Nanyang Technological University
+  logo: https://upload.wikimedia.org/wikipedia/en/f/f8/Nanyang_Technological_University_coat_of_arms_vector.svg
+  dept: College of Computing and Data Science
+  position: >-
+    B.Comp. (Highest Distinction), CGPA 4.71/5.00
+  date: Aug. 2020 - Jan. 2025
+  highlights:
+  - Dean's List (2022–2023); fully funded by the Ministry of Education, Singapore (SM2 Scholarship and Tuition Grant)
+  - Elective focuses in Artificial Intelligence and in Data Science &amp; Analytics
+- name: National University of Singapore
+  logo: https://upload.wikimedia.org/wikipedia/en/b/b9/NUS_coat_of_arms.svg
+  dept: School of Computing
+  position: Student Exchange Program
+  date: Jan. 2022 - May 2022
+
+academic_experience:
+- name: Parallel Systems Lab, Nanyang Technological University
+  logo: https://upload.wikimedia.org/wikipedia/en/f/f8/Nanyang_Technological_University_coat_of_arms_vector.svg
+  position: Research Assistant (Advisor - Prof. Chen Wang)
+  date: Nov. 2025 - present
+  highlights:
+  - Proposed HieraSparse (SC '26), a 2:4 semi-structured sparse KV attention accelerated by Sparse Tensor Cores
+  - Built the lab's GPU cluster (up to 5 nodes) from bare components and interconnected the nodes with InfiniBand through an NVIDIA Quantum-2 switch for NFS and MPI
+  - Benchmarked the school's shared GPU infrastructure (~200 H200 GPUs) on typical ML workloads with Megatron-LM, TransformerEngine, and TensorRT-LLM
+- name: HPC-AI Lab, National University of Singapore
+  logo: https://upload.wikimedia.org/wikipedia/en/b/b9/NUS_coat_of_arms.svg
+  position: Student Assistant (Advisor - Prof. Yang You)
+  date: Sep. 2023 - Jan. 2025
+  highlights:
+  - Developed EasyDist with Ph.D. students and the Alibaba Cloud PAI team, designing and implementing PyTorch dispatcher extensions, graph capture and transformation, an ILP solver for optimal SPMD placement, and pipeline parallelism integration
+
+industry_experience:
+- name: HPC-AI Technology (ColossalAI), Singapore
+  logo: https://github.com/hpcaitech.png?size=64
+  roles:
+  - position: Infrastructure Engineer (full-time)
+    date: Mar. 2025 - Oct. 2025
+  - position: Infrastructure Intern (part-time)
+    date: May 2024 - Nov. 2024
+  highlights:
+  - Contributed to Colossal-AI, including ZeRO optimizations, FP8 quantization-aware training, MoE training, and hybrid parallelism (PP/DP/EP/SP/TP)
+  - Optimized diffusion transformer training and inference with techniques such as sparse attention, timestep embedding caching, and quantization, tuned for GPUs including RTX 4090, H200, and B200
+- name: TikTok Singapore
+  logo: https://www.google.com/s2/favicons?domain=tiktok.com&sz=64
+  position: Applied Machine Learning Intern (part-time)
+  date: Jan. 2024 - May 2024
+  highlights:
+  - Built a health-monitoring and alerting system for GPU clusters using Grafana and Flask, and integrated it with a Lark chatbot to send real-time alerts to the on-call team
+- name: Huawei 2012 Laboratories (Shield Lab), Singapore
+  logo: https://www.google.com/s2/favicons?domain=huawei.com&sz=64
+  position: Intern (full-time)
+  date: Jul. 2023 - Dec. 2023
+  highlights:
+  - Built a pipeline to generate adversarial prompt datasets by augmenting public data with attack schemes such as role-play, code injection, and goal hijacking
+  - Designed a multi-stage adversarial prompt detection pipeline combining a lexical sensitive-word filter with a lightweight semantic classifier (TextCNN over PCA-reduced word embeddings)
