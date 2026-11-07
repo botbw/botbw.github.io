@@ -12,6 +12,7 @@
                     <a target="_blank" href="{{ item.url }}"><strong>{{ item.name }}</strong></a>
                     {% if item.role %}<span class="badge badge-pill badge-light border ml-2 font-weight-normal">{{ item.role }}</span>{% endif %}
                     {% if item.repo %}<a target="_blank" href="https://github.com/{{ item.repo }}/stargazers" class="ml-2"><img src="https://img.shields.io/github/stars/{{ item.repo }}?style=social" alt="GitHub stars" style="height: 18px;"></a>{% endif %}
+                    {% if item.prs %}<a target="_blank" href="{{ item.prs }}" class="ml-2 small"><i class="fas fa-code-pull-request"></i> PRs</a>{% endif %}
                 </div>
                 <div class="small text-muted">{{ item.description }}</div>
                 {% if item.highlights %}

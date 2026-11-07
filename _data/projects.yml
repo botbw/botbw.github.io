@@ -16,6 +16,7 @@
   repo: alibaba/easydist
   logo: https://github.com/alibaba.png?size=64
   url: https://github.com/alibaba/easydist
+  prs: https://github.com/alibaba/easydist/issues?q=involves:botbw
   description: >-
     A graph compiler for automatically parallelizing PyTorch model training across multiple GPUs.
   highlights:
@@ -28,6 +29,7 @@
   repo: hpcaitech/ColossalAI
   logo: https://github.com/hpcaitech.png?size=64
   url: https://github.com/hpcaitech/ColossalAI
+  prs: https://github.com/hpcaitech/ColossalAI/issues?q=involves:botbw
   description: >-
     A PyTorch-based system for training and serving large models across many GPUs.
   highlights:
@@ -40,6 +42,7 @@
   repo: hpcaitech/TensorNVMe
   logo: https://github.com/hpcaitech.png?size=64
   url: https://github.com/hpcaitech/TensorNVMe
+  prs: https://github.com/hpcaitech/TensorNVMe/issues?q=involves:botbw
   description: >-
     A Python library that transfers PyTorch tensors between GPU, CPU, and NVMe.
   highlights:
@@ -62,6 +65,7 @@
   repo: tile-ai/tilelang
   logo: https://github.com/tile-ai.png?size=64
   url: https://github.com/tile-ai/tilelang
+  prs: https://github.com/tile-ai/tilelang/issues?q=involves:botbw
   description: >-
     A DSL designed to streamline the development of high-performance GPU/CPU/accelerator kernels.
   highlights:
@@ -73,6 +77,7 @@
   repo: xlite-dev/LeetCUDA
   logo: https://github.com/xlite-dev.png?size=64
   url: https://github.com/xlite-dev/LeetCUDA
+  prs: https://github.com/xlite-dev/LeetCUDA/issues?q=involves:botbw
   description: >-
     A collection of CUDA learning notes and optimized kernels.
   highlights:
